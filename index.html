@@ -9,6 +9,11 @@
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
       body {
         font-family: 'Noto Sans TC', sans-serif;
+        /* 禁止選取文字，增加複製文案難度 (可選) */
+        /* -webkit-user-select: none; */
+        /* -moz-user-select: none; */
+        /* -ms-user-select: none; */
+        /* user-select: none; */
       }
       .scroll-smooth {
         scroll-behavior: smooth;
@@ -21,14 +26,43 @@
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite": "https://esm.sh/vite@^7.3.0"
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-800">
+  <body class="bg-slate-50 text-slate-800" oncontextmenu="return false">
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
+    
+    <!-- 防護腳本：增加複製難度 -->
+    <script>
+      // 禁止右鍵選單
+      document.addEventListener('contextmenu', event => event.preventDefault());
+
+      // 禁止拖曳圖片
+      document.addEventListener('dragstart', event => {
+        if (event.target.tagName.toLowerCase() === 'img') {
+          event.preventDefault();
+        }
+      });
+
+      // 禁止常用的開發者工具快捷鍵 (僅作簡單防護，無法完全阻擋高手)
+      document.addEventListener('keydown', function(event) {
+        // F12
+        if (event.keyCode == 123) {
+          event.preventDefault();
+        }
+        // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+        if (event.ctrlKey && event.shiftKey && (event.keyCode == 73 || event.keyCode == 74 || event.keyCode == 67)) {
+          event.preventDefault();
+        }
+        // Ctrl+U (檢視原始碼)
+        if (event.ctrlKey && event.keyCode == 85) {
+          event.preventDefault();
+        }
+      });
+    </script>
   </body>
 </html>
