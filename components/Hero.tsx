@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
+import productImg from '../slowmet_product_main.jpg';
 
 const Hero: React.FC = () => {
   return (
@@ -60,10 +61,10 @@ const Hero: React.FC = () => {
           {/* Image Content */}
           <div className="w-full md:w-1/2 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-square bg-white">
-              {/* Product Image - User provided */}
+              {/* Product Image */}
               <img 
-                src="./slowmet_product_main.jpg" 
-                alt="SLOWMET® 慢代謝管理代餐" 
+                src={productImg}
+                alt="SLOWMET® 慢代謝管理代餐 - 產品主圖" 
                 className="w-full h-full object-contain"
               />
             </div>
