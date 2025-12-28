@@ -1,9 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
-
-// 修正：由於 Vercel 雲端找不到本地圖片檔案，暫時使用線上示意圖代替，以確保網站能成功發布。
-// 之後請確保圖片已上傳至專案目錄，再改回引用本地路徑。
-const productImg = "https://images.unsplash.com/photo-1579722820308-d744149803cc?q=80&w=1000&auto=format&fit=crop"; 
+import productImg from '../slowmet_product_main.jpg';
 
 const Hero: React.FC = () => {
   return (
