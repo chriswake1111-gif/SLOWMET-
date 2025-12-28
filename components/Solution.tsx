@@ -10,9 +10,14 @@ const Solution: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/2">
              <div className="relative">
+               {/* 
+                 修改說明：
+                 圖片來源已更改為 '/slowmet_ingredients.jpg'。
+                 請確認您已將圖片命名為 slowmet_ingredients.jpg 並放入 public 資料夾中。
+               */}
                <img 
-                src="https://picsum.photos/seed/slowmet_ingredients/600/600" 
-                alt="SLOWMET Ingredients" 
+                src="/slowmet_ingredients.jpg" 
+                alt="SLOWMET® 實體沖泡圖與成分示意 - 燕麥、可可豆與茶葉" 
                 className="rounded-3xl shadow-2xl object-cover aspect-square"
                />
                <div className="absolute -bottom-6 -left-6 bg-slate-900 text-white p-6 rounded-tr-3xl rounded-bl-3xl shadow-lg">
