@@ -1,6 +1,13 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
-import productImg from '../slowmet_product_main.jpg';
+
+// 修改說明：
+// 我們改用 Vite 的標準靜態資源做法。
+// 請確保您的圖片 'slowmet_product_main.jpg' 已經放入專案根目錄下的 'public' 資料夾中。
+// 這樣做的好處是：
+// 1. 不需要 import，程式碼更乾淨。
+// 2. 即使圖片暫時遺失，網站也能成功發布 (不會報錯)，只會顯示破圖。
+// 3. 圖片路徑統一，不會因為檔案搬移而路徑錯誤。
 
 const Hero: React.FC = () => {
   return (
@@ -62,8 +69,12 @@ const Hero: React.FC = () => {
           <div className="w-full md:w-1/2 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-square bg-white">
               {/* Product Image */}
+              {/* 
+                  注意：這裡的路徑改為 '/slowmet_product_main.jpg'
+                  這代表它會去讀取 public 資料夾下的圖片
+              */}
               <img 
-                src={productImg}
+                src="/slowmet_product_main.jpg"
                 alt="SLOWMET® 慢代謝管理代餐 - 產品主圖" 
                 className="w-full h-full object-contain"
               />
